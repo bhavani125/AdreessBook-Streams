@@ -60,7 +60,7 @@ public class AddressBook {
                             boolean flag = true;
                             while (flag) {
                                 Contacts person = new Contacts();
-                                System.out.println("Enter 1) To Add contact in " + addressBookName + "\n2) To Edit Contact from " + addressBookName + "\n3) To Delete contact from " + addressBookName + "\n4) To View contact from " + addressBookName + "\n5) To Exit " + addressBookName);
+                                System.out.println("Enter 1) To Add contact in " + addressBookName + "\n2) To Edit Contact from " + addressBookName + "\n3) To Delete contact from " + addressBookName + "\n4) To Check Duplicate Contact from" + addressBookName + "\n5) To View contact from " + addressBookName + "\n5) To Exit " + addressBookName);
                                 int choice = sc.nextInt();
                                 switch (choice) {
                                     case 1:
@@ -73,6 +73,9 @@ public class AddressBook {
                                         deleteContacts();
                                         break;
                                     case 4:
+                                       duplicateCheck();
+                                        break;
+                                    case 5:
                                         viewContact(contactsArrayList);
                                         break;
                                     default:
@@ -198,6 +201,21 @@ public class AddressBook {
         System.out.println(contactsArrayList);
 
     }
+    //duplicateCheck method
+    public void duplicateCheck(){
+        System.out.println("Enter the first name");
+        String enteredName = sc.next();
+        for (int i = 0; i < contactsArrayList.size(); i++) {
+            Contacts c = contactsArrayList.get(i);
+            if (c.getFirstName().equals(enteredName)) {
+                System.out.println("This Person is Already Present");
+            } else {
+                System.out.println("You can Add this Person");
+            }
+        }
+
+    }
+
     //View contacts method
     private static void viewContact(ArrayList<Contacts> contactsArrayList) {
         for (Contacts c : contactsArrayList) {
