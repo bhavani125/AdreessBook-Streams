@@ -10,6 +10,18 @@ public class Contacts {
     String emailId;
     long zip;
     long phoneNumber;
+
+    public Contacts(String firstName, String lastName, String address, String city, String state, String emailId, long zip, long phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.emailId = emailId;
+        this.zip = zip;
+        this.phoneNumber = phoneNumber;
+    }
+
     // generating getters and setters
     public String getFirstName() {
         return firstName;
@@ -88,7 +100,4 @@ public class Contacts {
                 ", phoneNumber=" + phoneNumber +
                 '}';
     }
-
-
-
 }
